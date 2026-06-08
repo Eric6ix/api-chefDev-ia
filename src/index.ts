@@ -3,9 +3,9 @@ import "dotenv/config";
 import geminiRouter from "./agent/gemini.service.js";
 import cors from "cors";
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(geminiRouter);
-app.use(cors());
 const PORT_SERVER = Number(process.env.PORT_SERVER);
 
 app.listen(PORT_SERVER, () => {
